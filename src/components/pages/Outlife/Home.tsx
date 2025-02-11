@@ -35,19 +35,19 @@ const Outlife = () => {
 
   const [activeHightligthIndex, setActiveHightlightIndex] = useState(0)
 
-  const { width, height } = useMemo(() => {
+  const { width } = useMemo(() => {
     const activeHightligth = hightlightsRef.current?.children[activeHightligthIndex]
     if (!activeHightligth) return { width: undefined, height: undefined }
 
-    const { width, height } = activeHightligth.getBoundingClientRect()
-    return { width, height }
+    const { width } = activeHightligth.getBoundingClientRect()
+    return { width }
   }, [activeHightligthIndex])
 
   useEffect(() => {
     clearInterval(intervalRef.current)
     intervalRef.current = setInterval(() => {
       setActiveHightlightIndex((v) => (v + 1) % hightlights.length)
-    }, 3000)
+    }, 2600)
   }, [])
 
   const handleRedirectToTypeform = () => {
@@ -65,7 +65,7 @@ const Outlife = () => {
           <div className={styles.innerContent}>
             <h1 className={styles.title}>
               {STRINGS.content.title_1}
-              <span ref={hightlightsRef} className={styles.hightlightsContainer} style={{ width, height }}>
+              <span ref={hightlightsRef} className={styles.hightlightsContainer} style={{ width }}>
                 {hightlights.map((hightlight, index) => (
                   <span
                     key={`highlight_${index}`}

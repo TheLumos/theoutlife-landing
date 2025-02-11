@@ -2,7 +2,7 @@
 
 import React from 'react'
 import styles from './PrivacyPolicy.module.scss'
-import Logo from '/public/svg/logo.svg'
+import Logo from '/public/svg/logo-outlife.svg'
 
 const STRINGS = {
   title: 'Privacy Policy',
@@ -10,10 +10,10 @@ const STRINGS = {
     month: 'short',
     day: 'numeric',
   })}`,
-  pp: 'At Lumos, we value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your email address when you interact with our website.',
+  pp: 'Your privacy and trust are important to us. This document explains how we collect, use, and protect your personal information and outlines the terms of using our services. By joining our community or using our website, you agree to this Privacy Policy and Terms of Use.',
 }
 
-const homeLink = '/lumos'
+const homeLink = '/'
 
 const PrivacyPolicy = () => {
   return (
@@ -31,53 +31,62 @@ const PrivacyPolicy = () => {
           {STRINGS.pp}
           <div>
             <p>1. Information We Collect</p>
-            <p>We collect the following personal information:</p>
+            <p>
+              When you join our community through our Typeform or visit our website, we may collect the following
+              personal information:
+            </p>
             <ul>
-              <li>Your email address (provided through the “Get in Touch” form)</li>
+              <li>First Name and Last Name</li>
+              <li>Email Address</li>
+              <li>Field of Expertise</li>
+              <li>Sub-Discipline of Field of Expertise</li>
             </ul>
           </div>
           <div>
             <p>2. How We Use Your Information</p>
-            <p>Your email address is used to:</p>
+            <p>We use the information you provide to:</p>
             <ul>
-              <li>Communicate with you about our services, updates, or relevant opportunities.</li>
-              <li>Respond to inquiries or requests you make.</li>
+              <li>Build and manage a community of experts.</li>
+              <li>Communicate updates, opportunities, and relevant information.</li>
+              <li>Improve our services through demographic analysis.</li>
             </ul>
           </div>
           <div>
             <p>3. Data Sharing</p>
             <p className={styles.pp__sm}>
-              We do not sell or share your email address with third parties, except with trusted service providers
-              (e.g., email management platforms) who assist in delivering our communications.
+              We do not sell your personal data. However, we may share your information with trusted third-party service
+              providers (e.g., email or analytics platforms) to manage communication and operations.
             </p>
           </div>
           <div>
             <p>4. Data Retention</p>
             <p className={styles.pp__sm}>
-              We retain your email address only as long as necessary to provide our services or comply with legal
-              obligations.
+              Your personal information will be retained only as long as necessary to fulfill the purposes outlined in
+              this document or to comply with legal obligations.
             </p>
           </div>
           <div>
             <p>5. Your Rights</p>
             <p>You have the right to:</p>
             <ul>
+              <li>Access your personal information.</li>
+              <li>Correct inaccuracies in your data.</li>
+              <li>Request the deletion of your data.</li>
               <li>Opt out of communications at any time.</li>
-              <li>Request the deletion of your email from our records.</li>
               To exercise these rights, contact us at contact@thelumos.ai.
             </ul>
           </div>
           <div>
-            <p> 6. Your Rights</p>
+            <p>6. Data Security</p>
             <p className={styles.pp__sm}>
-              Data Security We implement measures to protect your email address from unauthorized access, loss, or
-              misuse.
+              We take appropriate technical and organizational measures to protect your personal data from unauthorized
+              access, loss, or misuse.
             </p>
           </div>
           <div>
             <p>7. Changes to This Privacy Policy</p>
             <p className={styles.pp__sm}>
-              We may update this Privacy Policy periodically. Updates will be posted on this page with the revised
+              We may update this Privacy Policy periodically. Updates will be posted on this page with a revised
               effective date.
             </p>
           </div>

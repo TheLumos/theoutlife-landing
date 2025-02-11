@@ -15,14 +15,14 @@
   user-select: none;
   box-sizing: border-box;
 
-  color: $lightGray;
+  color: $darkGrayOutlife;
 }
 
 html,
 body,
 #root {
   height: 100%;
-  background: $black;
+  background: $white;
   text-size-adjust: none;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
