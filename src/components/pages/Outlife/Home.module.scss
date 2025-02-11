@@ -1,0 +1,283 @@
+@use '@/styles/colors' as *;
+@use '@/styles/variables' as *;
+
+.container {
+  background: $white;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  padding: 0 120px;
+
+  @include desktopBig {
+    padding: 0 0 0 120px;
+  }
+  @include tablet {
+    padding: 0;
+  }
+}
+
+.header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  padding: 32px 120px;
+
+  @include tablet {
+    padding: 24px 64px;
+  }
+  @include mobileBig {
+    padding: 12px 20px;
+  }
+}
+.logo {
+  width: 110px;
+
+  path,
+  ellipse {
+    color: $darkGrayOutlife;
+  }
+}
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 20px 120px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @include tablet {
+    padding: 16px 64px;
+  }
+  @include mobileBig {
+    padding: 12px 20px;
+  }
+}
+.copyright,
+.privacyPolicyLink {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 19.46px;
+  letter-spacing: 0.02em;
+  text-align: left;
+
+  color: $darkGrayOutlife;
+}
+.privacyPolicyLink {
+  @include transition(all);
+
+  @include hover {
+    color: $grayOutlife;
+  }
+}
+
+.content {
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+
+  @include tablet {
+    padding: 0;
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.leftSide {
+  width: fit-content;
+  min-width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+
+  @include tablet {
+    width: 100%;
+    padding: 119px 64px 66px;
+    gap: 80px;
+  }
+  @include mobileBig {
+    padding: 96px 20px 40px;
+    gap: 40px;
+  }
+  @include mobileSmall {
+    padding: 72px 20px 40px;
+    gap: 27px;
+  }
+}
+.innerContent {
+  width: 100%;
+  max-width: 500px;
+}
+.title {
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 68px;
+  letter-spacing: -0.02em;
+  text-align: left;
+
+  color: $darkGrayOutlife;
+
+  @include mobileBig {
+    font-size: 48px;
+    line-height: 52px;
+  }
+  @include mobileSmall {
+    font-size: 40px;
+    line-height: 44px;
+  }
+}
+.text {
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 29.83px;
+  text-align: left;
+
+  color: $grayOutlife;
+
+  margin: 24px 0 32px;
+
+  @include mobileSmall {
+    margin-top: 15px;
+
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+.button {
+  padding: 20px 32px;
+  border-radius: 14px;
+  background: $darkGrayOutlife;
+
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 19.69px;
+  letter-spacing: -0.01em;
+  text-align: center;
+
+  color: $white;
+  cursor: pointer;
+  @include transition(all);
+
+  @include hover {
+    background: $grayOutlife;
+  }
+}
+
+.rightSide {
+  flex: 1;
+
+  height: 100%;
+  max-height: calc(100vh - 80px * 2);
+  min-height: 90px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    max-width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+
+    @include desktopBig {
+      aspect-ratio: unset;
+    }
+  }
+
+  @include tablet {
+    height: unset;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: unset;
+      max-height: unset;
+    }
+  }
+}
+
+.hightlightsContainer {
+  width: 227px;
+  height: 72px;
+
+  position: relative;
+  display: inline-block;
+
+  @include transition(all);
+
+  @include mobileBig {
+    width: 170px;
+    height: 60px;
+  }
+  @include mobileSmall {
+    width: 142px;
+    height: 52px;
+  }
+}
+.hightlight {
+  position: absolute;
+  top: 12px;
+  left: 0;
+
+  width: fit-content;
+  height: fit-content;
+
+  transform: translateY(100%);
+  opacity: 0;
+
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 72px;
+  letter-spacing: -0.02em;
+  text-align: left;
+
+  color: $accent;
+
+  @include mobileBig {
+    font-size: 48px;
+    line-height: 60px;
+  }
+  @include mobileSmall {
+    font-size: 40px;
+    line-height: 52px;
+  }
+}
+.activeHighlight {
+  animation: slide-in ease-in-out 2.5s;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}

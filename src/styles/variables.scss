@@ -1,0 +1,54 @@
+@use './colors' as *;
+
+// MIXINS - MEDIA
+
+@mixin mobileSmall {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin mobileBig {
+  @media (max-width: 393px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+@mixin nonTablet {
+  @media (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin desktopSmall {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin desktopBig {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+
+// MIXINS - CSS
+
+@mixin hover {
+  @include nonTablet {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// MIXINS - OTHER
+
+@mixin transition($param) {
+  transition: $param 250ms ease-out;
+}

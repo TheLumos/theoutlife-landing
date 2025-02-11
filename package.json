@@ -1,0 +1,38 @@
+{
+  "name": "lumos-outlife-landings-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/third-parties": "^15.1.6",
+    "classnames": "^2.5.1",
+    "google-auth-library": "^9.14.1",
+    "google-spreadsheet": "^4.1.4",
+    "next": "15.1.6",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-tooltip": "^5.28.0",
+    "sass": "^1.79.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250129.0",
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.11",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "raw-loader": "^4.0.2",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}

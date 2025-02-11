@@ -1,0 +1,536 @@
+@use '@/styles/colors' as *;
+@use '@/styles/variables' as *;
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+.header {
+  /* position: absolute;
+  left: 0;
+  right: 0;
+  top: 0; */
+
+  padding: 32px 162px 0px;
+
+  @include desktopBig {
+    padding: 32px 120px 0px;
+  }
+  @include desktopSmall {
+    padding: 24px 64px 0px;
+  }
+  @include tablet {
+    padding: 12px 20px 0px;
+  }
+}
+.logo {
+  width: 110px;
+
+  path {
+    color: $lightGray;
+  }
+}
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 20px 162px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @include desktopBig {
+    padding: 20px 120px;
+  }
+  opacity: 0.5;
+
+  @include tablet {
+    padding: 16px 64px;
+  }
+  @include mobileBig {
+    padding: 12px 20px;
+  }
+}
+.copyright,
+.privacyPolicyLink {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 19.46px;
+  letter-spacing: 0.02em;
+  text-align: left;
+
+  color: $lightGray;
+}
+.privacyPolicyLink {
+  @include transition(all);
+
+  @include hover {
+    color: white;
+  }
+}
+
+.content {
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+
+  @include tablet {
+    padding: 0;
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.leftSide {
+  width: fit-content;
+  min-width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  /* padding: 80px 20px 24px; */
+
+  /* @include tablet {
+    width: 100%;
+    padding: 132px 64px 66px;
+    gap: 80px;
+  } */
+  padding-left: 162px;
+
+  @include desktopBig {
+    padding-left: 120px;
+  }
+  @include desktopSmall {
+    padding-left: 64px;
+  }
+  @include tablet {
+    padding: 32px 20px;
+    gap: 32px;
+  }
+}
+.formSection {
+  width: 100%;
+  max-width: 550px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.formSubtitle {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20.84px;
+  letter-spacing: 0.02em;
+  text-align: left;
+
+  color: rgba($lightGray, 0.5);
+
+  @include mobileBig {
+    font-size: 15px;
+    line-height: 19.46px;
+  }
+}
+.formTitle {
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: $lightGray;
+  margin: 20px 0 40px;
+
+  font-size: 64px;
+  line-height: 68px;
+
+  @include desktopBig {
+    font-size: 60px;
+    line-height: 64px;
+  }
+
+  @include tablet {
+    font-size: 52px;
+    line-height: 56px;
+    margin: 15px 0 32px;
+  }
+
+  @include mobileBig {
+    font-size: 40px;
+    line-height: 44px;
+    margin: 15px 0 24px;
+  }
+}
+.form {
+  width: 100%;
+  max-width: 470px;
+  height: 60px;
+
+  padding: 6px;
+  border-radius: 6px;
+  background: $gray;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+
+  @include mobileBig {
+    height: 55px;
+  }
+}
+.formInput {
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  padding-left: 18px;
+  background: transparent;
+
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: -0.01em;
+  text-align: left;
+
+  color: $white;
+  @include transition(all);
+
+  &::placeholder {
+    color: rgba($white, 0.35);
+  }
+
+  @include mobileBig {
+    padding-left: 14px;
+
+    font-size: 18px;
+    line-height: 21px;
+  }
+  @include mobileBig {
+    padding-left: 10px;
+
+    font-size: 15px;
+    line-height: 17px;
+  }
+}
+.error {
+  color: $accent;
+  font-size: 14px;
+  margin-top: 8px;
+}
+.formSubmitBtn {
+  height: 100%;
+  padding: 0 28px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: $white;
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 19.69px;
+  letter-spacing: -0.01em;
+  text-align: center;
+  white-space: nowrap;
+
+  color: $black;
+
+  @include mobileBig {
+    padding: 0 20px;
+  }
+  @include mobileBig {
+    font-size: 15px;
+    line-height: 17px;
+  }
+}
+.formSubmitedText {
+  height: 100%;
+  padding-left: 16px;
+
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23.16px;
+  letter-spacing: -0.01em;
+  text-align: left;
+
+  color: $white;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @include mobileBig {
+    padding-left: 14px;
+
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+.formSubmitedMarker {
+  /* height: 100%; */
+
+  height: 43px;
+
+  /* min-width: fit-content; */
+}
+
+.handSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+}
+.handVideo {
+  min-width: 124px;
+  width: 124px;
+  height: 124px;
+  border-radius: 6px;
+  background: $gray;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+
+  video {
+    height: 124px;
+  }
+
+  @include tablet {
+    display: none;
+  }
+}
+.handSectionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @include tablet {
+    gap: 8px;
+  }
+}
+.handSectionText {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 23.35px;
+  letter-spacing: 0.02em;
+  text-align: left;
+
+  color: rgba($lightGray, 0.5);
+
+  @include mobileBig {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.companies {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+
+  svg {
+    height: 32px;
+
+    path {
+      color: rgba($lightGray, 0.5);
+    }
+  }
+
+  @include mobileBig {
+    gap: 21px;
+
+    svg {
+      height: 24px;
+    }
+  }
+}
+
+.rightSide {
+  flex: 1 1;
+  height: 100%;
+  max-height: calc(100vh - 65px * 2);
+  max-width: fit-content;
+  min-height: 265px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  overflow: hidden;
+
+  .rightSideVideo,
+  .rightSideVideoMobile {
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  @include mobileBig {
+    gap: 21px;
+
+    svg {
+      height: 24px;
+    }
+  }
+
+  @include mobileBig {
+    min-height: 239px;
+  }
+  /* @include mobileBig {
+    min-height: 90px;
+  } */
+  .rightSideVideoMobile {
+    display: none;
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+  }
+
+  @include tablet {
+    height: unset;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+
+    .rightSideVideo {
+      display: none;
+    }
+    .rightSideVideoMobile {
+      display: block;
+    }
+
+    .rightSideVideoMobile,
+    video {
+      width: 100%;
+      height: unset;
+      max-height: unset;
+    }
+  }
+}
+
+.hightlightsContainer {
+  width: 227px;
+  height: 56px;
+
+  position: relative;
+  display: inline-block;
+
+  @include transition(all);
+
+  @include desktopBig {
+    width: 212px;
+  }
+
+  @include tablet {
+    width: 184px;
+    height: 46px;
+  }
+
+  @include mobileBig {
+    width: 142px;
+    height: 36px;
+  }
+}
+.hightlight {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  @include transition(all);
+
+  @include desktopBig {
+    top: 2px;
+  }
+
+  @include tablet {
+    top: 0px;
+  }
+
+  width: fit-content;
+  height: fit-content;
+
+  transform: translateY(100%);
+
+  opacity: 0;
+
+  font-weight: 400;
+
+  letter-spacing: -0.02em;
+  text-align: left;
+
+  color: $accent;
+
+  font-size: 64px;
+  line-height: 68px;
+
+  @include desktopBig {
+    font-size: 60px;
+    line-height: 64px;
+  }
+
+  @include tablet {
+    font-size: 52px;
+    line-height: 56px;
+  }
+
+  @include mobileBig {
+    font-size: 40px;
+    line-height: 44px;
+  }
+}
+.activeHighlight {
+  animation: slide-in ease-out 2.8s;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(25%);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-25%);
+    opacity: 0;
+  }
+
+  /* @keyframes slide-in {
+  0% {
+    transform: translateY(25%);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(-25%);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-25%);
+    opacity: 0;
+  } */
+}
