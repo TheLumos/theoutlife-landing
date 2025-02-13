@@ -73,7 +73,7 @@ const PrivacyPolicy = () => {
               <li>Correct inaccuracies in your data.</li>
               <li>Request the deletion of your data.</li>
               <li>Opt out of communications at any time.</li>
-              To exercise these rights, contact us at contact@thelumos.ai.
+              To exercise these rights, contact us at contact@labela.ai.
             </ul>
           </div>
           <div>

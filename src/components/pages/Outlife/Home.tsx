@@ -20,7 +20,7 @@ const STRINGS = {
     button: 'Join Community',
   },
   footer: {
-    copyright: `© Outlife ${new Date().getFullYear()}`,
+    copyright: `© Labela ${new Date().getFullYear()}`,
     privacyPolicyLink: 'Privacy Policy',
   },
 }
